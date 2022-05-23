@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import {Stack, Card, Typography, Button, Input} from "@mui/material";
-import ReactQuill, {Quill} from 'react-quill'; // ES6
-import "./quill.css"
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
