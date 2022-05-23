@@ -7,8 +7,18 @@ import 'react-toastify/dist/ReactToastify.css';
 function AddLocationForm() {
     const [text, setText] = useState('');
     const [title, setTitle] = useState('');
+    const [imgUrl, setImgUrl] = useState('');
 
     const addLocation = () => {
+        const url = 'https://us-central1-meetplace-pragmatic.cloudfunctions.net/location/add'
+        fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                  },
+                body: JSON.stringify({'name': title, 'description': text, 'imageUrl': imgUrl})
+        })
         const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
         toast.promise(
             resolveAfter3Sec,
@@ -67,11 +77,18 @@ function AddLocationForm() {
                        height: "100%",
                     }}
                 />
+                <Input
+                    sx={{
+                        width: "100%"
+                    }}
+                    placeholder={"Image URL"}
+                    value={imgUrl}
+                    onChange={(ev) => setImgUrl(ev.target.value)}/>
                 <Button
-                    disabled={text === "" || title === ""}
+                    disabled={text === "" || title === "" || imgUrl === ""}
                     variant="contained"
                     onClick={addLocation}
-                >Add event location!</Button>
+                >Add event location</Button>
             </Stack>
         </Card>
     )
