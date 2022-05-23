@@ -1,21 +1,25 @@
 import React from "react";
 import Event from "../model/Event";
+import {CalendarComponent} from '@syncfusion/ej2-react-calendars';
 import AddLocationForm from "../components/AddLocationForm";
 import LocationsList from "../components/LocationsList";
 import AppNavbar from "../components/Navbar";
 
+const dateValue: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 20); //pentru a arata data curenta
+const startDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 6);  //minim
+const endDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 28);   //si maxim pentru a putea selecta data doar din range-ul dat de mine
 
 const styles = {
     page: {
     },
     content: {
-        paddingTop: 60,
+        paddingTop: 100,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
     },
     listContainer: {
-        marginLeft: 180,
+        marginLeft: 80,
         height: "90vh",
         overflow: "scroll"
     },
@@ -23,6 +27,8 @@ const styles = {
 
     }
 }
+
+
 
 function EventsPage() {
     const events: Event[] = [
@@ -80,7 +86,11 @@ function EventsPage() {
             </div>
             <div style={{}}>
                 <div style={styles.content}>
-                    <AddLocationForm/>
+                    <CalendarComponent value={dateValue}
+                        min={startDate}
+                        max={endDate}
+                        isMultiSelection={true}
+                        start="Decade"></CalendarComponent> 
                     <div style={styles.listContainer} className={"noScrollbar"}>
                         <LocationsList events={events} />
                     </div>
@@ -89,5 +99,6 @@ function EventsPage() {
         </div>
     )
 }
-
+// am folosit isMultiSelection la linia 92 pentru a putea selecta mai multe date din calendar
+// start="Decade" ne da posibilitatea sa alegem anul, luna si zilele pe care le dormim
 export default EventsPage;
