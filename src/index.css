@@ -1,28 +1,36 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-#root, body, html {
-  height: 100%;
-  background-color: #f3f3f3;
+#root,
+body,
+html {
+    height: 100%;
+    background-color: #f3f3f3;
 }
+
+
+/* Am mai adaugat chestii la body pentru a nu fi scrolabil in jos. Doar partea din dreapta vrem sa o putem scrola */
 
 body {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
+
+/* Am folosit noScrollbar pentru a nu avea scrolbar deoarece arata urat ca design pe pagina */
+
 .noScrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .noScrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }

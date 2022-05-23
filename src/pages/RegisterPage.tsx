@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from "react";
 import {Box, Button, Card, Input, Stack, Typography} from "@mui/material";
 
+// Fix la fel ca la login cu mici modificari pentru phone. Mai trebuie schimbata doar integrarea aici
 function RegisterPage() {
 
     const [email, setEmail] = useState('');

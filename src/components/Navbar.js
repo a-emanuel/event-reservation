@@ -1,21 +1,22 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Navbar from "reactjs-navbar";
 import {
     faUsers,
     faBookOpen,
     faGlobe,
     faCameraRetro,
-    faDoorOpen /*...*/,
+    faDoorOpen /*...*/ ,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "./MeetPlaceLogo.png"
 import "reactjs-navbar/dist/index.css";
 
+//declaram componenta <Navbar in container-ul ei AppNavbar si ii adaugam proprietati. De exemplu am pus logo-ul meu
+
 function AppNavbar() {
-    return (
-        <Navbar
-            logo={logo}
-            menuItems={[
-                {
+    return ( <
+        Navbar logo = { logo }
+        menuItems = {
+            [{
                     title: "Instagram",
                     icon: faCameraRetro,
                     isAuth: true,
@@ -47,7 +48,8 @@ function AppNavbar() {
                         window.location.href = '/login'
                     },
                 },
-            ]}
+            ]
+        }
         />
 
     )
