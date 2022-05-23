@@ -59,13 +59,13 @@ function AddLocationForm() {
                     placeholder={"Title"}
                     value={title}
                     onChange={(ev) => setTitle(ev.target.value)}/>
-                <textarea
+                <textarea //un imput pe mai multe randuri la description...
                     value={text}
                     placeholder={"Description . . ."}
                     onChange={(e) => setText(e.target.value)}
                     style={{
-                       resize: "none",
-                       width: "100%",
+                       resize: "none", //sa nu ii putem schimba marimea textului
+                       width: "100%",  //width: "100%" si height: "100%" ca sa ia cat spatiu a ramas
                        height: "100%",
                     }}
                 />
